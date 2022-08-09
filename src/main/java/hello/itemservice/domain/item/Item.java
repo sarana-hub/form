@@ -3,6 +3,7 @@ package hello.itemservice.domain.item;
 import lombok.Data;
 
 import java.util.List;
+/**상품*/
 
 @Data
 public class Item {
