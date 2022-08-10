@@ -43,6 +43,8 @@ public class FormItemController {
 
     @ModelAttribute("deliveryCodes")
     public List<DeliveryCode> deliveryCodes() {
+        //컨트롤러가 호출 될 때 마다 사용되므로 deliveryCodes 객체도 계속 생성
+        //미리 생성해두고 "재사용"하는 것이 효율적
         List<DeliveryCode> deliveryCodes = new ArrayList<>();
         deliveryCodes.add(new DeliveryCode("FAST", "빠른 배송"));
         deliveryCodes.add(new DeliveryCode("NORMAL", "일반 배송"));
