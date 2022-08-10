@@ -37,6 +37,8 @@ public class FormItemController {
     @ModelAttribute("itemTypes")
     public ItemType[] itemTypes() {
         return ItemType.values();
+        //ItemType.values()를 사용하여 해당 ENUM의 모든 정보를 배열로 반환
+        //ex [BOOK, FOOD, ETC]
     }
 
     @ModelAttribute("deliveryCodes")
