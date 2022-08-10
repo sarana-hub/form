@@ -51,8 +51,11 @@
             <div>등록 지역</div>
             <div th:each="region : ${regions}" class="form-check form-check-inline">
                 <input type="checkbox" th:field="*{regions}" th:value="${region.key}" class="form-check-input">
-                <label th:for="${#ids.prev('regions')}"
-                       th:text="${region.value}" class="form-check-label">서울</label>
+                <label th:for="${#ids.prev('regions')}" th:text="${region.value}" class="form-check-label">
+                    <!-- 체크박스를 each 루프 안에서 반복해서 만들 때 id에 임의로 1 , 2 , 3 숫자를 뒤에 붙여준다 -->
+                    서울
+                </label>
+
             </div>
         </div>
 

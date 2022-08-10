@@ -24,7 +24,8 @@ public class FormItemController {
 
     private final ItemRepository itemRepository;
 
-    @ModelAttribute("regions")      //regions 에서 반환한 값이 자동으로 model에 담긴다
+    //등록 폼, 상세화면, 수정 폼에서 모두 서울, 부산, 제주라는 체크 박스를 보여줘야함
+    @ModelAttribute("regions")      /*regions 에서 반환한 값이 자동으로 model에 담긴다*/
     public Map<String, String> regions() {
         Map<String, String> regions = new LinkedHashMap<>();
         regions.put("SEOUL", "서울");
@@ -62,7 +63,7 @@ public class FormItemController {
         regions.put("SEOUL","서울");
         regions.put("BUSAN","부산");
         regions.put("JEJU","제주");
-        model.addAttribute("regions", regions);*/ //regions 값이 자동으로 model에 담긴다
+        model.addAttribute("regions", regions);*/
         return "form/item";
     }
 

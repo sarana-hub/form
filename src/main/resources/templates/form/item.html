@@ -45,6 +45,7 @@
     <div>
         <div class="form-check">
             <input type="checkbox" id="open" th:field="${item.open}" class="form-check-input" disabled>
+            <!--item.html에는 th:object 를 사용하지 않았기 때문에 th:field 부분에 ${item.open}으로 적어주어야 한다-->
             <!--disabled를 사용해서 상품 상세에서는 체크 박스가 선택되지 않도록-->
             <label for="open" class="form-check-label">판매 오픈</label>
         </div>
@@ -55,8 +56,9 @@
         <div>등록 지역</div>
         <div th:each="region : ${regions}" class="form-check form-check-inline">
             <input type="checkbox" th:field="${item.regions}" th:value="${region.key}" class="form-check-input" disabled>
-            <label th:for="${#ids.prev('regions')}"
-                   th:text="${region.value}" class="form-check-label">서울</label>
+            <label th:for="${#ids.prev('regions')}" th:text="${region.value}" class="form-check-label">
+                서울
+            </label>
         </div>
     </div>
 
